@@ -8,6 +8,7 @@ public class RegeXMain {
         operation.userFirstName();
         operation.mobileNumberValidation();
         operation.passwordValidation();
+        operation.passwordValidation2();
 
     }
 }
