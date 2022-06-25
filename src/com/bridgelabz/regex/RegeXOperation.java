@@ -70,5 +70,23 @@ public class RegeXOperation {
             System.out.println("Mobile number is invalid");
         }
     }
+    public static void passwordValidation(){
+        Scanner scanner = new Scanner(System.in);
+        String PasswordPattern="[a-zA-Z0-9~!@#$]{8,}";
+        System.out.println("Enter the Password");
+        String passWord=scanner.next();
+
+        Pattern pattern4=Pattern.compile(PasswordPattern);
+        Matcher matcher4=pattern4.matcher(passWord);
+        Boolean result4=matcher4.matches();
+
+        if(result4==true){
+            System.out.println("Password is valid");
+        }else{
+            System.out.println("Password is invalid,please enter minimum 8 character");
+        }
+
+    }
+
 }
 

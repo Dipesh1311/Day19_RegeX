@@ -7,6 +7,7 @@ public class RegeXMain {
         RegeXOperation operation = new RegeXOperation();
         operation.userFirstName();
         operation.mobileNumberValidation();
+        operation.passwordValidation();
 
     }
 }
