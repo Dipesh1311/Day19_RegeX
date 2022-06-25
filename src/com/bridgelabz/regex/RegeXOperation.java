@@ -17,7 +17,7 @@ public class RegeXOperation {
         boolean result = matcher.matches();
 
         if(result == true)
-            System.out.println("First Name is Valid");
+            userLastName();
         else
             System.out.println("First Name is Invalid");
     }
@@ -33,8 +33,25 @@ public class RegeXOperation {
         boolean result = matcher.matches();
 
         if(result == true)
-            System.out.println("Last Name is Valid");
+            userEmail();
         else
             System.out.println("Last Name is Invalid");
     }
+    public static void userEmail(){
+        String emailPattern= "[a-zA-Z0-9.+-]+[0-9a-zA-Z]*@[a-z0-9]+[.][a-z]{2,4}[.a-z]*";
+        System.out.println("Enter your Email:");
+        Scanner scanner = new Scanner(System.in);
+        String email = scanner.next();
+
+        Pattern pattern2=Pattern.compile(emailPattern);
+        Matcher matcher2=pattern2.matcher(email);
+        boolean result2=matcher2.matches();
+
+        if(result2== true){
+            System.out.println("Email is valid");
+        }else{
+            System.out.println("Email is not valid");
+        }
+    }
 }
+
