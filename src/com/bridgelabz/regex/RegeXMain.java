@@ -6,6 +6,7 @@ public class RegeXMain {
         System.out.println("Welcome to User Registration program");
         RegeXOperation operation = new RegeXOperation();
         operation.userFirstName();
+        operation.mobileNumberValidation();
 
     }
 }
