@@ -48,13 +48,13 @@ public class RegeXOperation {
         boolean result2=matcher2.matches();
 
         if(result2== true){
-            System.out.println("Email is valid");
+            mobileNumberValidation();
         }else{
             System.out.println("Email is not valid");
         }
     }
 
-    public void mobileNumberValidation() {
+    public static void mobileNumberValidation() {
         Scanner scanner = new Scanner(System.in);
         String MobileNumberPattern="(91-)?[0-9]{10}";
         System.out.println("Enter the phone number");
@@ -65,12 +65,12 @@ public class RegeXOperation {
         Boolean result3=matcher3.matches();
 
         if(result3==true){
-            System.out.println("Mobile number is valid");
+            passwordValidation();
         }else{
             System.out.println("Mobile number is invalid");
         }
     }
-    public static void passwordValidation(){
+    public static void passwordValidation() {
         Scanner scanner = new Scanner(System.in);
         String PasswordPattern="[a-zA-Z0-9~!@#$]{8,}";
         System.out.println("Enter the Password");
@@ -81,7 +81,7 @@ public class RegeXOperation {
         Boolean result4=matcher4.matches();
 
         if(result4==true){
-            System.out.println("Password is valid");
+            passwordValidation2();
         }else{
             System.out.println("Password is invalid,please enter minimum 8 character");
         }
@@ -97,11 +97,29 @@ public class RegeXOperation {
         Boolean result5=matcher5.matches();
 
         if(result5==true){
-            System.out.println("Password is valid");
+            passwordValidation3();
         }else{
             System.out.println("Password is invalid,please enter minimum 8 character");
         }
     }
+    public static void passwordValidation3(){
+        Scanner scanner = new Scanner(System.in);
+        String PasswordPattern3="[A-Z][0-9][a-zA-Z0-9~!@#$]{6,}";
+        System.out.println("Enter the Password to check Rule3");
+        String passWord3=scanner.next();
+
+        Pattern pattern6=Pattern.compile(PasswordPattern3);
+        Matcher matcher6=pattern6.matcher(passWord3);
+        Boolean result6=matcher6.matches();
+
+        if(result6==true){
+            System.out.println("Password is valid");
+        }else{
+            System.out.println("Password is invalid,please enter atleast one numeric");
+        }
+
+    }
+
 
 }
 
