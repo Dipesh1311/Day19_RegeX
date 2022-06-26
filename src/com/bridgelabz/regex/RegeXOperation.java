@@ -102,24 +102,37 @@ public class RegeXOperation {
             System.out.println("Password is invalid,please enter minimum 8 character");
         }
     }
-    public static void passwordValidation3(){
+    public static void passwordValidation3() {
         Scanner scanner = new Scanner(System.in);
-        String PasswordPattern3="[A-Z][0-9][a-zA-Z0-9~!@#$]{6,}";
+        String PasswordPattern3 = "[A-Z][0-9][a-zA-Z0-9~!@#$]{6,}";
         System.out.println("Enter the Password to check Rule3");
-        String passWord3=scanner.next();
+        String passWord3 = scanner.next();
 
-        Pattern pattern6=Pattern.compile(PasswordPattern3);
-        Matcher matcher6=pattern6.matcher(passWord3);
-        Boolean result6=matcher6.matches();
+        Pattern pattern6 = Pattern.compile(PasswordPattern3);
+        Matcher matcher6 = pattern6.matcher(passWord3);
+        Boolean result6 = matcher6.matches();
 
-        if(result6==true){
-            System.out.println("Password is valid");
-        }else{
+        if (result6 == true) {
+            passwordValidation4();
+        } else {
             System.out.println("Password is invalid,please enter atleast one numeric");
         }
-
     }
+        public static void passwordValidation4() {
 
+            Scanner scanner = new Scanner(System.in);
+            String PasswordPattern4 = "([0-9a-zA-Z]*[~!@#$]){1}[0-9a-zA-Z~!@#$]*";
+            System.out.println("Enter your Password for Rule4:");
+            String password4 = scanner.next();
 
+            Pattern pattern7 = Pattern.compile(PasswordPattern4);
+            Matcher matcher7 = pattern7.matcher(password4);
+            boolean result7 = matcher7.matches();
+
+            if(result7 == true)
+                System.out.println("Password is Valid");
+            else
+                System.out.println("Password is invalid & plz enter at least one Special character");
+    }
 }
 
